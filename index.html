@@ -1,58 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ömer Alp Uygur</title>
 
   <style>
-    body{
+
+    *{
       margin:0;
-      background:black;
-      color:white;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#0b0b0b;
+      color:#f5f5f5;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
-      height:100vh;
-      font-family:Arial,sans-serif;
+      overflow:hidden;
+    }
+
+    .background-glow{
+      position:absolute;
+      width:700px;
+      height:700px;
+      background:radial-gradient(circle, rgba(180,145,75,0.12) 0%, rgba(0,0,0,0) 70%);
+      filter:blur(40px);
+      z-index:0;
+    }
+
+    .container{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      padding:50px;
       text-align:center;
     }
 
-    .box{
-      max-width:700px;
-      padding:20px;
+    h1{
+      font-size:72px;
+      letter-spacing:8px;
+      margin-bottom:25px;
+      color:#d6b36a;
+      font-weight:700;
     }
 
-    h1{
-      font-size:60px;
+    .line{
+      width:120px;
+      height:1px;
+      background:#8c7340;
+      margin:0 auto 40px auto;
+    }
+
+    .subtitle{
+      color:#9d9d9d;
+      letter-spacing:3px;
+      font-size:14px;
+      margin-bottom:40px;
+      text-transform:uppercase;
+    }
+
+    .description{
+      color:#d7d7d7;
+      font-size:19px;
+      line-height:2;
+      font-weight:300;
+      margin-bottom:60px;
+    }
+
+    .counter-title{
+      color:#8f8f8f;
+      font-size:13px;
+      letter-spacing:4px;
+      text-transform:uppercase;
       margin-bottom:20px;
     }
 
-    p{
-      color:#bdbdbd;
-      line-height:1.7;
-      font-size:18px;
+    #countdown{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
     }
+
+    .time-box{
+      min-width:100px;
+      padding:20px;
+      border:1px solid rgba(214,179,106,0.25);
+      background:rgba(255,255,255,0.02);
+      border-radius:14px;
+      backdrop-filter:blur(10px);
+    }
+
+    .number{
+      font-size:38px;
+      color:#d6b36a;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+
+    .label{
+      color:#a0a0a0;
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:768px){
+
+      body{
+        overflow:auto;
+      }
+
+      .container{
+        padding:30px;
+      }
+
+      h1{
+        font-size:42px;
+        letter-spacing:4px;
+      }
+
+      .description{
+        font-size:16px;
+        line-height:1.8;
+      }
+
+      .time-box{
+        min-width:80px;
+        padding:15px;
+      }
+
+      .number{
+        font-size:28px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>ÖMER ALP UYGUR</h1>
+  <div class="background-glow"></div>
 
-  <p>
-    Engineering • Finance • Technology • Entrepreneurship
-  </p>
+  <div class="container">
 
-  <p>
-    Building future projects, systems, and ideas.
-  </p>
+    <h1>ÖMER ALP UYGUR</h1>
 
-  <p>
-    Store launching soon.
-  </p>
-</div>
+    <div class="line"></div>
+
+    <div class="subtitle">
+      ENGINEERING • FINANCE • TECHNOLOGY • ENTREPRENEURSHIP
+    </div>
+
+    <div class="description">
+      Building at the intersection of engineering, finance, technology, and entrepreneurship.
+      <br><br>
+      Future founder focused on large-scale systems, strategic thinking, infrastructure,
+      investment, and innovation. Passionate about creating impactful projects in construction,
+      defense technology, business development, and emerging technologies.
+      <br><br>
+      Currently pursuing long-term growth through mathematics, engineering,
+      leadership, and global vision.
+    </div>
+
+    <div class="counter-title">
+      Countdown to July 30
+    </div>
+
+    <div id="countdown">
+
+      <div class="time-box">
+        <div class="number" id="days">00</div>
+        <div class="label">Days</div>
+      </div>
+
+      <div class="time-box">
+        <div class="number" id="hours">00</div>
+        <div class="label">Hours</div>
+      </div>
+
+      <div class="time-box">
+        <div class="number" id="minutes">00</div>
+        <div class="label">Minutes</div>
+      </div>
+
+      <div class="time-box">
+        <div class="number" id="seconds">00</div>
+        <div class="label">Seconds</div>
+      </div>
+
+    </div>
+
+  </div>
+
+<script>
+
+const targetDate = new Date("July 30, 2026 00:00:00").getTime();
+
+const countdown = setInterval(function() {
+
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+}, 1000);
+
+</script>
 
 </body>
 </html>
