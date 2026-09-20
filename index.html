@@ -8,6 +8,14 @@
 
   <style>
 
+    :root{
+      color-scheme:dark;
+      --gold:#d4b678;
+      --gold-text:linear-gradient(115deg, #b99453 0%, #e2c58b 21%, #fff0c9 34%, #b79350 48%, #e9cf95 63%, #fff3d3 72%, #c2a062 88%, #e4ca94 100%);
+      --gold-metal:linear-gradient(115deg, #a47b3b 0%, #d8b878 23%, #f3dfac 37%, #c7a15c 51%, #ebd095 66%, #fff0c3 74%, #bc9554 100%);
+      --gold-edge:rgba(220,188,125,0.28);
+    }
+
     *{
       margin:0;
       padding:0;
@@ -16,7 +24,7 @@
 
     body{
       background:#0b0b0b;
-      color:#f5f5f5;
+      color:#f2eee5;
       font-family: "Helvetica Neue", Arial, sans-serif;
       min-height:100vh;
       display:flex;
@@ -26,16 +34,9 @@
       overflow-y:auto;
     }
 
-    .background-glow{
-      position:absolute;
-      top:0;
-      width:700px;
-      max-width:100%;
-      height:700px;
-      background:radial-gradient(circle, rgba(180,145,75,0.12) 0%, rgba(0,0,0,0) 70%);
-      filter:blur(40px);
-      z-index:0;
-      pointer-events:none;
+    ::selection{
+      background:var(--gold);
+      color:#17130c;
     }
 
     .container{
@@ -52,14 +53,15 @@
       font-size:72px;
       letter-spacing:8px;
       margin-bottom:25px;
-      color:#d6b36a;
+      color:var(--gold);
       font-weight:700;
     }
 
     .line{
       width:120px;
       height:1px;
-      background:#8c7340;
+      background:var(--gold-metal);
+      box-shadow:0 1px 0 rgba(243,223,172,0.12);
       margin:0 auto 40px auto;
     }
 
@@ -82,7 +84,7 @@
 
     h2{
       margin-bottom:14px;
-      color:#d6b36a;
+      color:var(--gold);
       font-size:26px;
       line-height:1.35;
       font-weight:600;
@@ -107,13 +109,13 @@
 
     .purpose-card{
       padding:24px;
-      border:1px solid rgba(214,179,106,0.18);
-      background:rgba(255,255,255,0.02);
+      border:1px solid var(--gold-edge);
+      background:#141414;
       border-radius:14px;
     }
 
     .purpose-card h3{
-      color:#d6b36a;
+      color:var(--gold);
       font-size:19px;
       font-weight:600;
       margin-bottom:12px;
@@ -128,8 +130,8 @@
     .join-community{
       margin-top:40px;
       padding:32px 0;
-      border-top:1px solid rgba(214,179,106,0.18);
-      border-bottom:1px solid rgba(214,179,106,0.18);
+      border-top:1px solid var(--gold-edge);
+      border-bottom:1px solid var(--gold-edge);
     }
 
     .contact-email{
@@ -142,7 +144,8 @@
     }
 
     a{
-      color:#d6b36a;
+      color:var(--gold);
+      text-decoration-color:#bda16a;
       text-underline-offset:4px;
     }
 
@@ -151,7 +154,7 @@
     }
 
     a:focus-visible{
-      outline:2px solid #d6b36a;
+      outline:2px solid #e3c78c;
       outline-offset:5px;
       border-radius:3px;
     }
@@ -165,9 +168,10 @@
       margin:50px auto 0;
       padding:32px 24px;
       max-width:620px;
-      border:1px solid rgba(214,179,106,0.25);
+      border:1px solid var(--gold-edge);
       border-radius:18px;
-      background:linear-gradient(135deg, rgba(214,179,106,0.08), rgba(255,255,255,0.02));
+      background:#141414;
+      box-shadow:inset 0 1px 0 rgba(214,183,120,0.15), 0 8px 24px rgba(0,0,0,0.12);
     }
 
     .vip-community p{
@@ -198,18 +202,49 @@
       min-height:48px;
       padding:14px 24px;
       border-radius:9px;
-      background:#d6b36a;
-      color:#0b0b0b;
+      background:var(--gold-metal);
+      background-size:130% 100%;
+      background-position:50% 50%;
+      border:1px solid #d9bb80;
+      box-shadow:inset 0 1px 0 #fff0c5aa, inset 0 -1px 0 #684b2466, 0 4px 14px #0003;
+      color:#17130c;
       font-size:15px;
       font-weight:700;
       line-height:1.4;
       text-decoration:none;
-      transition:background-color 0.2s ease;
+      transition:background-position 0.25s ease, box-shadow 0.25s ease;
     }
 
     .vip-entry:hover{
-      background:#e3c582;
-      color:#0b0b0b;
+      background-position:0% 50%;
+      box-shadow:inset 0 1px 0 #fff5da, 0 5px 20px #d1ad581a;
+      color:#17130c;
+    }
+
+    @supports ((background-clip:text) or (-webkit-background-clip:text)){
+      h1, h2, .purpose-card h3, .contact-email{
+        background-image:var(--gold-text);
+        background-clip:text;
+        -webkit-background-clip:text;
+        color:transparent;
+        -webkit-text-fill-color:transparent;
+      }
+    }
+
+    @media(forced-colors:active){
+      h1, h2, .purpose-card h3, .contact-email{
+        background:none;
+        color:CanvasText;
+        -webkit-text-fill-color:CanvasText;
+      }
+      .vip-entry{
+        background:ButtonFace;
+        color:ButtonText;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .vip-entry{transition:none;}
     }
 
     @media(max-width:768px){
@@ -247,8 +282,6 @@
 </head>
 
 <body>
-
-  <div class="background-glow" aria-hidden="true"></div>
 
   <main class="container">
 
