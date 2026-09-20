@@ -21,7 +21,8 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      overflow:hidden;
+      overflow-x:hidden;
+      overflow-y:auto;
     }
 
     .background-glow{
@@ -110,11 +111,58 @@
       text-transform:uppercase;
     }
 
-    @media(max-width:768px){
+    .vip-community{
+      margin:50px auto 0;
+      padding:32px 24px;
+      max-width:620px;
+      border:1px solid rgba(214,179,106,0.25);
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(214,179,106,0.08), rgba(255,255,255,0.02));
+    }
 
-      body{
-        overflow:auto;
-      }
+    .vip-community h2{
+      margin-bottom:14px;
+      color:#d6b36a;
+      font-size:26px;
+      line-height:1.35;
+      font-weight:600;
+    }
+
+    .vip-community p{
+      max-width:40ch;
+      margin:0 auto 24px;
+      color:#b8b8b8;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .vip-entry{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      min-height:48px;
+      padding:14px 24px;
+      border-radius:9px;
+      background:#d6b36a;
+      color:#0b0b0b;
+      font-size:15px;
+      font-weight:700;
+      line-height:1.4;
+      text-decoration:none;
+      transition:background-color 0.2s ease;
+    }
+
+    .vip-entry:hover{
+      background:#e3c582;
+    }
+
+    .vip-entry:focus-visible{
+      outline:2px solid #d6b36a;
+      outline-offset:5px;
+    }
+
+    @media(max-width:768px){
 
       .container{
         padding:30px;
@@ -137,6 +185,15 @@
 
       .number{
         font-size:28px;
+      }
+
+      .vip-community{
+        margin-top:40px;
+        padding:28px 20px;
+      }
+
+      .vip-community h2{
+        font-size:23px;
       }
 
     }
@@ -196,6 +253,14 @@
       </div>
 
     </div>
+
+    <section class="vip-community" lang="tr" aria-labelledby="vip-community-title">
+      <h2 id="vip-community-title">VİP Topluluk Üye Girişi</h2>
+      <p>Üyelere özel paylaşımlar ve sohbetler için topluluğa giriş yap.</p>
+      <a class="vip-entry" href="https://omeralp-topluluk.omeralpuygur2.chatgpt.site">
+        Topluluğa Giriş Yap <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
 
   </div>
 
