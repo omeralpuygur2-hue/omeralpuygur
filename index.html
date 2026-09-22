@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ömer Alp Uygur</title>
-  <meta name="description" content="Ömer Alp Uygur ve birlikte gelişmeye odaklanan özel topluluk. Vizyonumuz, misyonumuz, katılım başvurusu ve üye girişi." />
+  <meta name="description" content="YKS topluluğu: soruları birlikte tartış, ders başından fotoğraf paylaş, ilerlemeni ve istikrarını gör. Katılım başvurusu ve üye girişi." />
 
   <style>
 
@@ -164,7 +164,7 @@
       color:#a8a8a8;
     }
 
-    .vip-community{
+    .yks-community{
       margin:50px auto 0;
       padding:32px 24px;
       max-width:620px;
@@ -174,7 +174,7 @@
       box-shadow:inset 0 1px 0 rgba(214,183,120,0.15), 0 8px 24px rgba(0,0,0,0.12);
     }
 
-    .vip-community p{
+    .yks-community p{
       max-width:52ch;
       margin:0 auto 24px;
       color:#b8b8b8;
@@ -182,7 +182,7 @@
       line-height:1.7;
     }
 
-    .vip-community .account-note{
+    .yks-community .account-note{
       margin:22px auto 0;
       font-size:14px;
       color:#a8a8a8;
@@ -194,7 +194,7 @@
       padding:10px 0;
     }
 
-    .vip-entry{
+    .yks-entry{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -215,7 +215,7 @@
       transition:background-position 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .vip-entry:hover{
+    .yks-entry:hover{
       background-position:0% 50%;
       box-shadow:inset 0 1px 0 #fff5da, 0 5px 20px #d1ad581a;
       color:#17130c;
@@ -237,14 +237,14 @@
         color:CanvasText;
         -webkit-text-fill-color:CanvasText;
       }
-      .vip-entry{
+      .yks-entry{
         background:ButtonFace;
         color:ButtonText;
       }
     }
 
     @media(prefers-reduced-motion:reduce){
-      .vip-entry{transition:none;}
+      .yks-entry{transition:none;}
     }
 
     @media(max-width:768px){
@@ -267,7 +267,7 @@
         grid-template-columns:1fr;
       }
 
-      .vip-community{
+      .yks-community{
         margin-top:40px;
         padding:28px 20px;
       }
@@ -278,6 +278,10 @@
 
     }
 
+    .ataturk-quote{margin:44px auto 0;padding:28px 0;border-top:1px solid var(--gold-edge);max-width:680px;}
+    .ataturk-quote blockquote{font-size:clamp(20px,3vw,26px);line-height:1.65;color:#e7d3a5;font-weight:500;}
+    .ataturk-quote figcaption{margin-top:18px;font-size:14px;color:#b8b8b8;letter-spacing:1px;}
+    .purpose-card p,.yks-community p{font-size:16px;}
   </style>
 </head>
 
@@ -301,25 +305,25 @@
     </header>
 
     <section class="community-about" aria-labelledby="community-title">
-      <h2 id="community-title">Topluluğumuz</h2>
+      <h2 id="community-title">YKS’ye Birlikte Hazırlanıyoruz</h2>
       <p>
-        Burası, eğitimden spora ve yeni fikirlere uzanan hedeflerimiz için bir paylaşım alanı.
-        Günlük deneyimlerimizi, fotoğraflarımızı ve videolarımızı paylaşarak birbirimizi
-        motive etmeyi ve gelişimimizi birlikte takip etmeyi amaçlıyoruz.
+        Beğendiğimiz ve zorlandığımız soruları birbirimize gönderiyor, çözümleri yorumlarda tartışıyoruz.
+        Ders başında fotoğraf paylaşarak aynı hedef için çalışan başkalarının da olduğunu görüyor,
+        yalnız olmadığımızı hissediyor ve birbirimizi motive ediyoruz.
       </p>
       <div class="purpose-grid">
         <div class="purpose-card">
           <h3>Vizyonumuz</h3>
           <p>
-            Birbirinden öğrenen, hedefleri için emek veren ve gelişimi günlük bir alışkanlığa
-            dönüştüren samimi bir topluluk olmak.
+            YKS yolunda yalnız hissetmediğimiz, sorular sormaktan çekinmediğimiz ve birbirimizin
+            emeğine destek olduğumuz samimi bir çalışma topluluğu olmak.
           </p>
         </div>
         <div class="purpose-card">
           <h3>Misyonumuz</h3>
           <p>
-            Attığımız küçük adımları, öğrendiklerimizi ve zorlandığımız noktaları paylaşmak;
-            birbirimize destek olmak ve hedeflerimize daha istikrarlı ilerlemek.
+            Soruları birlikte tartışmak, ders başındaki anlarımızı paylaşmak ve çalışma sürecimizi
+            kaydetmek. Geçmiş paylaşımlarımıza dönüp bakarak kendi ilerlememizi ve istikrarımızı görmek.
           </p>
         </div>
       </div>
@@ -339,14 +343,14 @@
       </p>
     </section>
 
-    <section class="vip-community" aria-labelledby="vip-community-title">
-      <h2 id="vip-community-title">VİP Topluluk Üye Girişi</h2>
+    <section class="yks-community" aria-labelledby="yks-community-title">
+      <h2 id="yks-community-title">YKS Topluluğu Üye Girişi</h2>
       <p>
         Topluluğa giriş için bir <strong>ChatGPT hesabı</strong> gerekiyor.
         Hesabın yoksa <strong>ücretsiz olarak oluşturabilirsin.</strong>
       </p>
-      <a class="vip-entry" href="https://omeralp-topluluk.omeralpuygur2.chatgpt.site">
-        Topluluğa Giriş Yap <span aria-hidden="true">&rarr;</span>
+      <a class="yks-entry" href="https://omeralp-topluluk.omeralpuygur2.chatgpt.site">
+        YKS Topluluğuna Giriş Yap <span aria-hidden="true">&rarr;</span>
       </a>
       <p class="account-note">
         Giriş yaparken erişim izni verilen e-posta adresine bağlı ChatGPT hesabını kullan.
@@ -355,6 +359,10 @@
       </p>
     </section>
 
+    <figure class="ataturk-quote">
+      <blockquote cite="https://atam.gov.tr/wp-content/uploads/2024/03/Ataturkun-Soylev-ve-Demecleri-C2.pdf">“Ey yükselen yeni nesil, istikbal sizindir. Cumhuriyet'i biz kurduk, O'nu yükseltecek ve sürdürecek sizlersiniz.”</blockquote>
+      <figcaption>Mustafa Kemal Atatürk</figcaption>
+    </figure>
   </main>
 
 </body>
